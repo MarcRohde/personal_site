@@ -133,9 +133,8 @@ const recent = (await getPublishedWriting()).slice(0, 3);
   .learning-groups { display: grid; gap: 1.5rem; }
   .learning-group h3 {
     margin: 0 0 0.75rem;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--muted);
   }
@@ -144,6 +143,6 @@ const recent = (await getPublishedWriting()).slice(0, 3);
 
   @media (max-width: 760px) {
     .section { grid-template-columns: 1fr; }
-    .portrait { float: none; width: 100%; max-width: 22rem; margin: 0 0 1.75rem; }
+    .portrait { float: none; width: 15rem; max-width: 100%; margin: 0 auto 1.5rem; }
   }
 </style>

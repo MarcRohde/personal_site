@@ -28,6 +28,8 @@ const current = normalize(Astro.url.pathname);
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#ffffff" />
+    <link rel="preload" href="/fonts/newsreader-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/source-sans-3-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
     <!-- Google tag (gtag.js); is:inline stops Astro from bundling these scripts -->
     <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-B724YKYBB3"></script>
     <script is:inline>
@@ -58,13 +60,28 @@ const current = normalize(Astro.url.pathname);
 </html>
 
 <style is:global>
+  @font-face {
+    font-family: "Newsreader";
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: swap;
+    src: url("/fonts/newsreader-latin-variable.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: "Source Sans 3";
+    font-style: normal;
+    font-weight: 200 900;
+    font-display: swap;
+    src: url("/fonts/source-sans-3-latin-variable.woff2") format("woff2");
+  }
   :root {
     --fg: #0a0a0a;
     --muted: #6b6b6b;
     --line: #e6e6e6;
     --line-strong: #cfcfcf;
     --bg: #ffffff;
-    --font: "Inter", "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
+    --font-display: "Newsreader", Georgia, serif;
+    --font-body: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root { --fg: #f5f5f5; --muted: #9a9a9a; --line: #222; --line-strong: #3a3a3a; --bg: #0a0a0a; }
@@ -73,7 +90,7 @@ const current = normalize(Astro.url.pathname);
   html { -webkit-text-size-adjust: 100%; }
   body {
     margin: 0;
-    font-family: var(--font);
+    font-family: var(--font-body);
     font-size: 1.0625rem;
     line-height: 1.7;
     color: var(--fg);
@@ -98,14 +115,12 @@ const current = normalize(Astro.url.pathname);
   }
   .monogram {
     font-weight: 700;
-    letter-spacing: -0.02em;
     text-decoration: none;
     font-size: 1.125rem;
   }
   .site-nav { display: flex; gap: 2rem; }
   .site-nav a {
     font-size: 0.75rem;
-    letter-spacing: 0.16em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--muted);
@@ -118,22 +133,20 @@ const current = normalize(Astro.url.pathname);
   .eyebrow {
     margin: 0 0 1rem;
     font-size: 0.75rem;
-    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--muted);
   }
   h1 {
     margin: 0;
-    font-size: clamp(2.75rem, 7vw, 5rem);
-    font-weight: 700;
-    line-height: 1;
-    letter-spacing: -0.035em;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.05;
   }
   h2 {
     margin: 0 0 1.25rem;
-    font-size: 0.75rem;
+    font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--muted);
   }
@@ -152,4 +165,7 @@ const current = normalize(Astro.url.pathname);
     color: var(--muted);
   }
   .site-footer p { margin: 0; }
+  @media (max-width: 760px) {
+    h1 { font-size: 2.75rem; }
+  }
 </style>

@@ -36,8 +36,8 @@ const { Content } = await render(post);
 <style>
   .article { max-width: 40rem; }
   .article-head { padding: clamp(2rem, 5vw, 3.5rem) 0 2rem; border-bottom: 1px solid var(--line); }
-  .article-head h1 { font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.1; }
-  .meta { margin: 0 0 1rem; font-size: 0.8125rem; color: var(--muted); letter-spacing: 0.04em; }
+  .article-head h1 { font-size: 3.25rem; line-height: 1.1; }
+  .meta { margin: 0 0 1rem; font-size: 0.8125rem; color: var(--muted); }
   .lede { margin: 1.25rem 0 0; color: var(--muted); font-size: 1.125rem; }
   .article-body { padding-top: 2rem; font-size: 1.125rem; line-height: 1.75; }
   .article-body :global(p) { margin: 0 0 1.4rem; }
@@ -45,7 +45,6 @@ const { Content } = await render(post);
     margin: 2.75rem 0 1rem;
     font-size: 1.5rem;
     font-weight: 700;
-    letter-spacing: -0.015em;
     text-transform: none;
     color: var(--fg);
   }
@@ -61,4 +60,7 @@ const { Content } = await render(post);
   .article-body :global(img) { max-width: 100%; height: auto; filter: grayscale(1); }
   .article-body :global(hr) { border: 0; border-top: 1px solid var(--line); margin: 2.5rem 0; }
   .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 0.9375rem; }
+  @media (max-width: 760px) {
+    .article-head h1 { font-size: 2.25rem; }
+  }
 </style>
