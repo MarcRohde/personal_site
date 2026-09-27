@@ -5,17 +5,45 @@ import page from '../data/twitter-tools.json';
 ---
 <Base title={`${profile.title} - ${page.title}`} description={page.intro}>
   <main>
-    <h1>{page.title}</h1>
-    <p>{page.intro}</p>
-    <ul>
+    <section class="page-head">
+      <p class="eyebrow">Resources</p>
+      <h1>{page.title}</h1>
+      <p class="lede">{page.intro}</p>
+    </section>
+    <ul class="tools">
       {page.tools.map((t) => (
         <li>
-          <a href={t.url} rel="noopener noreferrer" target="_blank">{t.name}</a> - {t.description}
+          <a href={t.url} rel="noopener noreferrer" target="_blank">
+            <span class="name">{t.name}<span class="arrow" aria-hidden="true">&#8599;</span></span>
+            <span class="desc">{t.description}</span>
+          </a>
         </li>
       ))}
     </ul>
-    <p>
+    <p class="prose outro">
       {page.outro} <a href={page.handle.url} rel="noopener noreferrer me" target="_blank">{page.handle.label}</a>.
     </p>
   </main>
 </Base>
+
+<style>
+  .page-head { padding: clamp(2.5rem, 7vw, 5rem) 0 2.5rem; }
+  .lede { max-width: 38rem; margin: 1.75rem 0 0; color: var(--muted); font-size: 1.125rem; }
+  .tools { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+  .tools li { border-bottom: 1px solid var(--line); }
+  .tools a {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(1rem, 6vw, 5rem);
+    padding: 1.5rem 0;
+    text-decoration: none;
+  }
+  .name { font-size: 1.375rem; font-weight: 600; letter-spacing: -0.01em; }
+  .arrow { display: inline-block; margin-left: 0.4rem; color: var(--muted); transition: transform 0.2s ease; }
+  .tools a:hover .arrow { transform: translate(2px, -2px); color: var(--fg); }
+  .desc { color: var(--muted); }
+  .outro { margin-top: 2.5rem; }
+  @media (max-width: 760px) {
+    .tools a { grid-template-columns: 1fr; gap: 0.25rem; }
+  }
+</style>

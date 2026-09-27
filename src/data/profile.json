@@ -2,10 +2,16 @@
   "name": "Marc Rohde",
   "title": "Hi! I'm Marc Rohde",
   "tagline": "Technologist, Business Executive, Busy Parent, Amateur Outdoorsman",
+  "photo": {
+    "src": "/images/marc-rohde-800.jpg",
+    "alt": "Black and white portrait of Marc Rohde",
+    "width": 800,
+    "height": 1120
+  },
   "social": [
-    { "label": "Twitter", "url": "https://twitter.com/mrohde" },
-    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/marcrohde/" },
-    { "label": "Instagram", "url": "https://www.instagram.com/mrohde/" }
+    { "label": "X (Twitter)", "icon": "x", "url": "https://x.com/mrohde" },
+    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/marcrohde/" },
+    { "label": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/mrohde/" }
   ],
   "bio": [
     "I started my professional career in 1996 and have had the opportunity to work on some really interesting projects over the years.",

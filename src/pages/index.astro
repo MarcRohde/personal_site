@@ -1,26 +1,116 @@
 ---
 import Base from '../layouts/Base.astro';
+import SocialLinks from '../components/SocialLinks.astro';
 import profile from '../data/profile.json';
+
+const roles = profile.tagline.split(',').map((r) => r.trim());
 ---
 <Base title={profile.title}>
-  <header>
-    <h1>{profile.name}</h1>
-    <p class="tagline">{profile.tagline}</p>
-    <nav aria-label="Social profiles">
-      {profile.social.map((s) => (
-        <a href={s.url} rel="noopener noreferrer me" target="_blank">{s.label}</a>
-      ))}
-    </nav>
-  </header>
   <main>
-    <section>
-      {profile.bio.map((p) => <p>{p}</p>)}
+    <section class="hero">
+      <figure class="portrait">
+        <img
+          src={profile.photo.src}
+          alt={profile.photo.alt}
+          width={profile.photo.width}
+          height={profile.photo.height}
+          fetchpriority="high"
+        />
+      </figure>
+      <div class="intro">
+        <p class="eyebrow">Hi, I'm</p>
+        <h1>{profile.name}</h1>
+        <ul class="roles">
+          {roles.map((r) => <li>{r}</li>)}
+        </ul>
+        <SocialLinks />
+      </div>
     </section>
-    <section>
+
+    <section class="section">
+      <h2>About</h2>
+      <div class="prose">
+        {profile.bio.map((p) => <p>{p}</p>)}
+      </div>
+    </section>
+
+    <section class="section">
       <h2>{profile.learning.heading}</h2>
-      <ul>
-        {profile.learning.items.map((i) => <li>{i}</li>)}
-      </ul>
+      <ol class="focus">
+        {profile.learning.items.map((i, n) => (
+          <li><span class="index">{String(n + 1).padStart(2, '0')}</span>{i}</li>
+        ))}
+      </ol>
     </section>
   </main>
 </Base>
+
+<style>
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: end;
+    padding: clamp(2.5rem, 7vw, 5rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .portrait { margin: 0; }
+  .portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center top;
+    filter: grayscale(1);
+  }
+  .intro { padding-bottom: 0.5rem; }
+  .roles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.75rem 0 2.25rem;
+    padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 1.125rem;
+  }
+  .roles li:not(:last-child)::after {
+    content: "/";
+    margin: 0 0.6rem;
+    color: var(--line-strong);
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: clamp(2rem, 6vw, 5rem);
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .section h2 { margin: 0.35rem 0 0; }
+
+  .focus { margin: 0; padding: 0; list-style: none; }
+  .focus li {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--line);
+    font-size: clamp(1.25rem, 2.4vw, 1.625rem);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .focus li:last-child { border-bottom: 1px solid var(--line); }
+  .index {
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    font-variant-numeric: tabular-nums;
+  }
+
+  @media (max-width: 760px) {
+    .hero, .section { grid-template-columns: 1fr; }
+    .portrait { max-width: 22rem; }
+  }
+</style>
