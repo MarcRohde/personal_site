@@ -1,0 +1,78 @@
+{
+  "title": "Toolbox",
+  "intro": "The tools I use every week and recommend without hesitation. No affiliate links. A tool earns a spot here by saving me real time.",
+  "groups": [
+    {
+      "name": "Build & automate",
+      "tools": [
+        {
+          "name": "Visual Studio Code",
+          "url": "https://code.visualstudio.com/",
+          "description": "My primary workspace. Code, documentation, and AI agents in one place."
+        },
+        {
+          "name": "GitHub Copilot",
+          "url": "https://github.com/features/copilot",
+          "description": "An AI partner for code and writing. It gets much better when you give it real context."
+        },
+        {
+          "name": "GitHub",
+          "url": "https://github.com/",
+          "description": "Version control for everything I build, including this site."
+        },
+        {
+          "name": "PowerShell",
+          "url": "https://learn.microsoft.com/powershell/",
+          "description": "The glue for automation across Windows, Microsoft 365, and Azure."
+        }
+      ]
+    },
+    {
+      "name": "Data & decisions",
+      "tools": [
+        {
+          "name": "Power BI",
+          "url": "https://www.microsoft.com/power-platform/products/power-bi",
+          "description": "Turns operational data into something leaders can act on."
+        },
+        {
+          "name": "Microsoft Fabric",
+          "url": "https://www.microsoft.com/microsoft-fabric",
+          "description": "One platform for data engineering, warehousing, and analytics."
+        }
+      ]
+    },
+    {
+      "name": "Publishing",
+      "tools": [
+        {
+          "name": "Astro",
+          "url": "https://astro.build/",
+          "description": "The framework behind this site. Fast, simple, and built for content."
+        },
+        {
+          "name": "GitHub Pages",
+          "url": "https://pages.github.com/",
+          "description": "Free, reliable hosting for a static site, published straight from a repo."
+        }
+      ]
+    },
+    {
+      "name": "Social",
+      "tools": [
+        {
+          "name": "X Pro (formerly TweetDeck)",
+          "url": "https://pro.x.com/",
+          "description": "A multi-column X client for following conversations efficiently."
+        },
+        {
+          "name": "BackTweets",
+          "url": "https://backtweets.com/",
+          "description": "Trace a link to see where it travels and who is talking about it."
+        }
+      ]
+    }
+  ],
+  "outro": "Have a tool I should try? Send me a message on",
+  "handle": { "label": "LinkedIn", "url": "https://www.linkedin.com/in/marcrohde/" }
+}

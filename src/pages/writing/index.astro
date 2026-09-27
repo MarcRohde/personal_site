@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import WritingList from '../../components/WritingList.astro';
+import profile from '../../data/profile.json';
+import { getPublishedWriting } from '../../lib/writing';
+
+const posts = await getPublishedWriting();
+const intro = 'Longer-form thinking on leadership, operations, AI, and life outside work. Shorter takes live on LinkedIn.';
+---
+<Base title={`${profile.title} - Writing`} description={intro}>
+  <main>
+    <section class="page-head">
+      <h1>Writing</h1>
+      <p class="lede">{intro}</p>
+    </section>
+    {posts.length > 0
+      ? <WritingList posts={posts} />
+      : <p class="empty">The first long-form post is on the way.</p>}
+  </main>
+</Base>
+
+<style>
+  .page-head { padding: clamp(2rem, 5vw, 3.5rem) 0 2rem; }
+  .lede { max-width: 38rem; margin: 1.25rem 0 0; color: var(--muted); font-size: 1.125rem; }
+  .empty { color: var(--muted); border-top: 1px solid var(--line); padding-top: 1.5rem; }
+</style>

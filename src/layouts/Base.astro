@@ -10,7 +10,8 @@ interface Props {
 const { title, description = profile.tagline } = Astro.props;
 const nav = [
   { label: 'Home', href: '/' },
-  { label: 'X Tools', href: '/x-tools/' },
+  { label: 'Writing', href: '/writing/' },
+  { label: 'Toolbox', href: '/toolbox/' },
 ];
 const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
 const current = normalize(Astro.url.pathname);
@@ -41,7 +42,7 @@ const current = normalize(Astro.url.pathname);
         <a class="monogram" href="/" aria-label={`${profile.name} home`}>MR</a>
         <nav class="site-nav" aria-label="Site">
           {nav.map((n) => (
-            <a href={n.href} aria-current={current === normalize(n.href) ? 'page' : undefined}>{n.label}</a>
+            <a href={n.href} aria-current={current === normalize(n.href) || (n.href !== '/' && current.startsWith(normalize(n.href))) ? 'page' : undefined}>{n.label}</a>
           ))}
         </nav>
       </header>
