@@ -1,0 +1,18 @@
+{
+  "title": "X Tools",
+  "intro": "I am an active X user and as such I am always looking for new tools that will improve my efficiency and use of X. Below is a short list of tools that I use and recommend.",
+  "tools": [
+    {
+      "name": "BackTweets",
+      "url": "https://backtweets.com/",
+      "description": "Trace a link to see where it travels, who links to and mentions it, and the conversation around it."
+    },
+    {
+      "name": "X Pro (formerly TweetDeck)",
+      "url": "https://pro.x.com/",
+      "description": "A multi-column X client that lets you interact and converse on X more efficiently."
+    }
+  ],
+  "outro": "While this isn't a complete list of tools, it is some of the best I have found. If you have additional suggestions, message me on X",
+  "handle": { "label": "@mrohde", "url": "https://x.com/mrohde" }
+}

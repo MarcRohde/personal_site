@@ -9,7 +9,7 @@
     "height": 1120
   },
   "social": [
-    { "label": "X (Twitter)", "icon": "x", "url": "https://x.com/mrohde" },
+    { "label": "X", "icon": "x", "url": "https://x.com/mrohde" },
     { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/marcrohde/" },
     { "label": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/mrohde/" }
   ],

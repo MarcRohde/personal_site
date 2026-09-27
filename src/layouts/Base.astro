@@ -10,7 +10,7 @@ interface Props {
 const { title, description = profile.tagline } = Astro.props;
 const nav = [
   { label: 'Home', href: '/' },
-  { label: 'Twitter Tools', href: '/twitter-tools/' },
+  { label: 'X Tools', href: '/x-tools/' },
 ];
 const normalize = (p: string) => p.replace(/\/+$/, '') || '/';
 const current = normalize(Astro.url.pathname);
