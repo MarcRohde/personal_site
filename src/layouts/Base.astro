@@ -25,6 +25,15 @@ const current = normalize(Astro.url.pathname);
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#ffffff" />
+    <!-- Google tag (gtag.js); is:inline stops Astro from bundling these scripts -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-B724YKYBB3"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-B724YKYBB3');
+    </script>
   </head>
   <body>
     <div class="page">
