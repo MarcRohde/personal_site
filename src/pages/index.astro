@@ -29,7 +29,12 @@ const recent = (await getPublishedWriting()).slice(0, 3);
             height={profile.photo.height}
           />
         </figure>
-        {profile.bio.map((p) => <p>{p}</p>)}
+        {profile.bio.map((p) => {
+          const [before, ...rest] = p.split(profile.employer.name);
+          return rest.length
+            ? <p>{before}<a href={profile.employer.url} rel="noopener noreferrer" target="_blank">{profile.employer.name}</a>{rest.join(profile.employer.name)}</p>
+            : <p>{p}</p>;
+        })}
       </div>
     </section>
 

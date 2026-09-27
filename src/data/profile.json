@@ -2,6 +2,7 @@
   "name": "Marc Rohde",
   "title": "Hi! I'm Marc Rohde",
   "tagline": "Business leader. Systems thinker. Happiest on a trail.",
+  "employer": { "name": "Andis Company", "url": "https://www.andis.com/" },
   "photo": {
     "src": "/images/marc-rohde-800.jpg",
     "alt": "Black and white portrait of Marc Rohde",
