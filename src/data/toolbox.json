@@ -28,6 +28,21 @@
       ]
     },
     {
+      "name": "Business systems",
+      "tools": [
+        {
+          "name": "Dynamics 365 Finance & Operations",
+          "url": "https://www.microsoft.com/dynamics-365/products/finance",
+          "description": "The ERP backbone for finance, supply chain, and manufacturing in one system."
+        },
+        {
+          "name": "Dynamics 365 CRM",
+          "url": "https://www.microsoft.com/dynamics-365/products/sales",
+          "description": "Customer relationships, sales, and service connected to the rest of the business."
+        }
+      ]
+    },
+    {
       "name": "Data & decisions",
       "tools": [
         {
