@@ -1,0 +1,24 @@
+{
+  "name": "Marc Rohde",
+  "title": "Hi! I'm Marc Rohde",
+  "tagline": "Technologist, Business Executive, Busy Parent, Amateur Outdoorsman",
+  "social": [
+    { "label": "Twitter", "url": "https://twitter.com/mrohde" },
+    { "label": "LinkedIn", "url": "https://www.linkedin.com/in/marcrohde/" },
+    { "label": "Instagram", "url": "https://www.instagram.com/mrohde/" }
+  ],
+  "bio": [
+    "I started my professional career in 1996 and have had the opportunity to work on some really interesting projects over the years.",
+    "As a technologist I'm a jack of many trades and a master of none -- I'm always learning. I have been a network administrator and architect, web developer and architect, and have an extensive background in ERP systems.",
+    "As a leader, I have a passion for solving big problems and coaching an engaged team.",
+    "In the past, I had a number of projects underway and as time has become more precious this page has become a directory of my social profiles and some utilities that I use frequently. Hopefully, I will soon have time to continue to maintain this site and return to my passion projects."
+  ],
+  "learning": {
+    "heading": "What am I trying to master now?",
+    "items": [
+      "Dynamics Finance & Operations",
+      "Power BI",
+      "Power Platform Development"
+    ]
+  }
+}
