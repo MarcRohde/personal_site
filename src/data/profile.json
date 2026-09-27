@@ -2,6 +2,12 @@
   "name": "Marc Rohde",
   "title": "Hi! I'm Marc Rohde",
   "tagline": "Business leader. Systems thinker. Happiest on a trail.",
+  "seo": {
+    "title": "Marc Rohde — Chief Business Integration Officer",
+    "description": "Marc Rohde, Chief Business Integration Officer at Andis Company, writes about AI, leadership, and operational excellence in mid-market manufacturing."
+  },
+  "availability": "I'm currently open to CIO/CTO conversations.",
+  "email": "[EMAIL PLACEHOLDER]",
   "employer": { "name": "Andis Company", "url": "https://www.andis.com/" },
   "photo": {
     "src": "/images/marc-rohde-800.jpg",
@@ -10,9 +16,15 @@
     "height": 1120
   },
   "social": [
-    { "label": "X", "icon": "x", "url": "https://x.com/mrohde" },
-    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/marcrohde/" },
+    { "label": "X", "icon": "x", "url": "https://x.com/mrohde", "cta": "Follow on X" },
+    { "label": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/in/marcrohde/", "cta": "Connect on LinkedIn" },
     { "label": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/mrohde/" }
+  ],
+  "highlights": [
+    { "figure": "[TEAM SIZE]", "label": "people led across software development, infrastructure, ERP, customer enablement, and project management" },
+    { "figure": "[$ BUDGET]", "label": "annual budget owned for [BUDGET SCOPE, e.g. technology and business systems]" },
+    { "figure": "[NUMBER]", "label": "transformations delivered, including [TRANSFORMATION NAME]" },
+    { "figure": "[RESULT]", "label": "[OUTCOME, e.g. reduction in order-to-cash cycle time] from [INITIATIVE]" }
   ],
   "bio": [
     "I build integrated operations. As Chief Business Integration Officer at Andis Company, I lead the teams that connect business systems, software, infrastructure, customer enablement, and project delivery into one way of running the business.",
