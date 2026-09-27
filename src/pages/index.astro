@@ -8,28 +8,25 @@ const roles = profile.tagline.split(',').map((r) => r.trim());
 <Base title={profile.title}>
   <main>
     <section class="hero">
-      <figure class="portrait">
-        <img
-          src={profile.photo.src}
-          alt={profile.photo.alt}
-          width={profile.photo.width}
-          height={profile.photo.height}
-          fetchpriority="high"
-        />
-      </figure>
-      <div class="intro">
-        <p class="eyebrow">Hi, I'm</p>
-        <h1>{profile.name}</h1>
-        <ul class="roles">
-          {roles.map((r) => <li>{r}</li>)}
-        </ul>
-        <SocialLinks />
-      </div>
+      <p class="eyebrow">Hi, I'm</p>
+      <h1>{profile.name}</h1>
+      <ul class="roles">
+        {roles.map((r) => <li>{r}</li>)}
+      </ul>
+      <SocialLinks />
     </section>
 
-    <section class="section">
+    <section class="about">
       <h2>About</h2>
-      <div class="prose">
+      <div class="about-body">
+        <figure class="portrait">
+          <img
+            src={profile.photo.src}
+            alt={profile.photo.alt}
+            width={profile.photo.width}
+            height={profile.photo.height}
+          />
+        </figure>
         {profile.bio.map((p) => <p>{p}</p>)}
       </div>
     </section>
@@ -47,14 +44,25 @@ const roles = profile.tagline.split(',').map((r) => r.trim());
 
 <style>
   .hero {
-    display: grid;
-    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
-    gap: clamp(2rem, 6vw, 5rem);
-    align-items: end;
-    padding: clamp(2.5rem, 7vw, 5rem) 0;
+    padding: clamp(3rem, 9vw, 7rem) 0 clamp(2.5rem, 6vw, 4.5rem);
     border-bottom: 1px solid var(--line);
   }
-  .portrait { margin: 0; }
+
+  .about {
+    padding: clamp(2.5rem, 6vw, 4.5rem) 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .about-body {
+    display: flow-root;
+    max-width: 60rem;
+  }
+  .about-body p { margin: 0 0 1.25rem; }
+  .portrait {
+    float: right;
+    width: 40%;
+    max-width: 24rem;
+    margin: 0.35rem 0 1.5rem clamp(1.5rem, 4vw, 3rem);
+  }
   .portrait img {
     display: block;
     width: 100%;
@@ -64,7 +72,6 @@ const roles = profile.tagline.split(',').map((r) => r.trim());
     object-position: center top;
     filter: grayscale(1);
   }
-  .intro { padding-bottom: 0.5rem; }
   .roles {
     display: flex;
     flex-wrap: wrap;
@@ -110,7 +117,7 @@ const roles = profile.tagline.split(',').map((r) => r.trim());
   }
 
   @media (max-width: 760px) {
-    .hero, .section { grid-template-columns: 1fr; }
-    .portrait { max-width: 22rem; }
+    .section { grid-template-columns: 1fr; }
+    .portrait { float: none; width: 100%; max-width: 22rem; margin: 0 0 1.75rem; }
   }
 </style>
