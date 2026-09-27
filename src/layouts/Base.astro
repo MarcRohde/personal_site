@@ -1,0 +1,64 @@
+---
+import profile from '../data/profile.json';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = profile.tagline } = Astro.props;
+const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'Twitter Tools', href: '/twitter-tools/' },
+];
+const current = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(current, Astro.site)} />
+  </head>
+  <body>
+    <nav class="site-nav" aria-label="Site">
+      {nav.map((n) => (
+        <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>
+      ))}
+    </nav>
+    <slot />
+    <footer>
+      <p>&copy; {new Date().getFullYear()} {profile.name}</p>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --fg: #1f2933;
+    --muted: #52606d;
+    --accent: #0b6bcb;
+    --bg: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --fg: #e4e7eb; --muted: #9aa5b1; --accent: #62b0ff; --bg: #12161b; }
+  }
+  body {
+    margin: 0 auto;
+    max-width: 44rem;
+    padding: 2rem 1.25rem 3rem;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--fg);
+    background: var(--bg);
+  }
+  h1 { margin-bottom: 0.25rem; font-size: 2.5rem; }
+  .tagline { margin-top: 0; color: var(--muted); }
+  nav { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0 2rem; }
+  .site-nav { margin-top: 0; font-size: 0.95rem; }
+  .site-nav a[aria-current="page"] { color: var(--fg); text-decoration: none; font-weight: 600; }
+  a { color: var(--accent); }
+  footer { margin-top: 3rem; color: var(--muted); font-size: 0.875rem; }
+</style>

@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+import profile from '../data/profile.json';
+import page from '../data/twitter-tools.json';
+---
+<Base title={`${profile.title} - ${page.title}`} description={page.intro}>
+  <main>
+    <h1>{page.title}</h1>
+    <p>{page.intro}</p>
+    <ul>
+      {page.tools.map((t) => (
+        <li>
+          <a href={t.url} rel="noopener noreferrer" target="_blank">{t.name}</a> - {t.description}
+        </li>
+      ))}
+    </ul>
+    <p>
+      {page.outro} <a href={page.handle.url} rel="noopener noreferrer me" target="_blank">{page.handle.label}</a>.
+    </p>
+  </main>
+</Base>

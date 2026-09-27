@@ -1,64 +1,26 @@
 ---
+import Base from '../layouts/Base.astro';
 import profile from '../data/profile.json';
 ---
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{profile.title}</title>
-    <meta name="description" content={profile.tagline} />
-    <link rel="canonical" href={Astro.site} />
-  </head>
-  <body>
-    <header>
-      <h1>{profile.name}</h1>
-      <p class="tagline">{profile.tagline}</p>
-      <nav aria-label="Social profiles">
-        {profile.social.map((s) => (
-          <a href={s.url} rel="noopener noreferrer me" target="_blank">{s.label}</a>
-        ))}
-      </nav>
-    </header>
-    <main>
-      <section>
-        {profile.bio.map((p) => <p>{p}</p>)}
-      </section>
-      <section>
-        <h2>{profile.learning.heading}</h2>
-        <ul>
-          {profile.learning.items.map((i) => <li>{i}</li>)}
-        </ul>
-      </section>
-    </main>
-    <footer>
-      <p>&copy; {new Date().getFullYear()} {profile.name}</p>
-    </footer>
-  </body>
-</html>
-
-<style is:global>
-  :root {
-    --fg: #1f2933;
-    --muted: #52606d;
-    --accent: #0b6bcb;
-    --bg: #ffffff;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root { --fg: #e4e7eb; --muted: #9aa5b1; --accent: #62b0ff; --bg: #12161b; }
-  }
-  body {
-    margin: 0 auto;
-    max-width: 44rem;
-    padding: 3rem 1.25rem;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-    line-height: 1.6;
-    color: var(--fg);
-    background: var(--bg);
-  }
-  h1 { margin-bottom: 0.25rem; font-size: 2.5rem; }
-  .tagline { margin-top: 0; color: var(--muted); }
-  nav { display: flex; gap: 1rem; flex-wrap: wrap; margin: 1rem 0 2rem; }
-  a { color: var(--accent); }
-  footer { margin-top: 3rem; color: var(--muted); font-size: 0.875rem; }
-</style>
+<Base title={profile.title}>
+  <header>
+    <h1>{profile.name}</h1>
+    <p class="tagline">{profile.tagline}</p>
+    <nav aria-label="Social profiles">
+      {profile.social.map((s) => (
+        <a href={s.url} rel="noopener noreferrer me" target="_blank">{s.label}</a>
+      ))}
+    </nav>
+  </header>
+  <main>
+    <section>
+      {profile.bio.map((p) => <p>{p}</p>)}
+    </section>
+    <section>
+      <h2>{profile.learning.heading}</h2>
+      <ul>
+        {profile.learning.items.map((i) => <li>{i}</li>)}
+      </ul>
+    </section>
+  </main>
+</Base>
