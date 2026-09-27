@@ -4,24 +4,20 @@ import { formatDate } from '../lib/writing';
 
 interface Props {
   posts: CollectionEntry<'writing'>[];
-  upcoming?: boolean;
 }
 
-const { posts, upcoming = false } = Astro.props;
-const Row = upcoming ? 'div' : 'a';
+const { posts } = Astro.props;
 ---
 <ul class="writing">
   {posts.map((post) => (
     <li>
-      <Row class="row" href={upcoming ? undefined : `/writing/${post.id}/`}>
-        {upcoming
-          ? <span class="status">In progress</span>
-          : <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>}
+      <a class="row" href={`/writing/${post.id}/`}>
+        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
         <span class="body">
-          <span class="title">{post.data.title}{!upcoming && post.data.draft && <span class="draft"> (draft)</span>}</span>
+          <span class="title">{post.data.title}{post.data.draft && <span class="draft"> (draft)</span>}</span>
           <span class="summary">{post.data.summary}</span>
         </span>
-      </Row>
+      </a>
     </li>
   ))}
 </ul>
@@ -36,7 +32,7 @@ const Row = upcoming ? 'div' : 'a';
     padding: 1.25rem 0;
     text-decoration: none;
   }
-  time, .status {
+  time {
     padding-top: 0.3rem;
     font-size: 0.8125rem;
     color: var(--muted);

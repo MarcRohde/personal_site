@@ -3,7 +3,7 @@ import Base from '../layouts/Base.astro';
 import profile from '../data/profile.json';
 import page from '../data/toolbox.json';
 ---
-<Base title={`${profile.title} - ${page.title}`} description={page.intro}>
+<Base title={`${page.title} — ${profile.name}`} description={page.intro}>
   <main>
     <section class="page-head">
       <h1>{page.title}</h1>

@@ -1,6 +1,7 @@
 ---
 import profile from '../data/profile.json';
 import SocialLinks from '../components/SocialLinks.astro';
+import { getPublishedWriting } from '../lib/writing';
 
 interface Props {
   title: string;
@@ -8,9 +9,10 @@ interface Props {
 }
 
 const { title, description = profile.tagline } = Astro.props;
+const hasWriting = (await getPublishedWriting()).length > 0;
 const nav = [
   { label: 'Home', href: '/' },
-  { label: 'Writing', href: '/writing/' },
+  ...(hasWriting ? [{ label: 'Writing', href: '/writing/' }] : []),
   { label: 'Toolbox', href: '/toolbox/' },
 ];
 const normalize = (p: string) => p.replace(/\/+$/, '') || '/';

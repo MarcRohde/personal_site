@@ -12,8 +12,9 @@ const pagePaths = Object.keys(import.meta.glob('./**/*.astro'))
 
 export const GET: APIRoute = async ({ site }) => {
   const posts = await getPublishedWriting();
+  const paths = posts.length ? pagePaths : pagePaths.filter((p) => p !== '/writing/');
   const urls = [
-    ...pagePaths.map((path) => ({ loc: new URL(path, site).href, lastmod: undefined as string | undefined })),
+    ...paths.map((path) => ({ loc: new URL(path, site).href, lastmod: undefined as string | undefined })),
     ...posts.map((post) => ({
       loc: new URL(`/writing/${post.id}/`, site).href,
       lastmod: post.data.date.toISOString().slice(0, 10),
