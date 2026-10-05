@@ -12,6 +12,7 @@ const intro = 'Longer-form thinking on leadership, operations, AI, and life outs
     <section class="page-head">
       <h1>Writing</h1>
       <p class="lede">{intro}</p>
+      <p class="feed-link"><a href="/writing/rss.xml">Subscribe via RSS</a></p>
     </section>
     {posts.length > 0
       ? <WritingList posts={posts} />
@@ -22,5 +23,6 @@ const intro = 'Longer-form thinking on leadership, operations, AI, and life outs
 <style>
   .page-head { padding: clamp(2rem, 5vw, 3.5rem) 0 2rem; }
   .lede { max-width: 38rem; margin: 1.25rem 0 0; color: var(--muted); font-size: 1.125rem; }
+  .feed-link { margin: 1rem 0 0; font-size: 0.875rem; }
   .empty { color: var(--muted); border-top: 1px solid var(--line); padding-top: 1.5rem; }
 </style>

@@ -26,6 +26,7 @@ const current = normalize(Astro.url.pathname);
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="alternate" type="application/rss+xml" title={`${profile.name} - Writing`} href={new URL('/writing/rss.xml', Astro.site)} />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="preload" href="/fonts/newsreader-latin-variable.woff2" as="font" type="font/woff2" crossorigin />

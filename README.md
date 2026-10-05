@@ -11,6 +11,10 @@ Source for <https://marc.rohde-net.us>, built with Astro and deployed to GitHub 
 
 Writing here is long-form only; short posts stay on LinkedIn.
 
+Published writing is available as an RSS feed at <https://marc.rohde-net.us/writing/rss.xml>.
+The Writing page links to the feed, and all pages include RSS autodiscovery metadata.
+Feed entries include the title, publication date, summary, tags, and article link; drafts are always excluded.
+
 ## Run locally
 
 ```powershell
