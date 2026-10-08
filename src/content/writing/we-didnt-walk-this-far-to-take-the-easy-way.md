@@ -8,6 +8,12 @@ draft: false
 
 Over the weekend, I was hiking with my Scout troop. By the time we reached the final stretch, we had covered nearly 10 miles. Everyone was tired when we came to a choice between two paths.
 
+<!-- markdownlint-disable MD033 -->
+<figure class="story-photo">
+<img src="/images/post_images/20261003_153505_Dev_Lake.jpg" alt="View from East Bluff at Devil's Lake State Park" loading="eager" fetchpriority="high" />
+</figure>
+<!-- markdownlint-enable MD033 -->
+
 One route was a little easier. The other was significantly more challenging.
 
 I turned to one of the Scouts who had been struggling most throughout the hike and asked which path he thought we should take.
